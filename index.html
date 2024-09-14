@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Resume Builder</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Dynamic Resume Builder</h1>
+        <form id="resumeForm">
+            <br>
+            <fieldset>
+            <legend>Personal Information</legend>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            <label for="age">Age:</label>
+            <input type="number" id="age" name="age">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <label for="phone">Phone:</label>
+            <input type="text" id="phone" name="phone">
+            <label for="image">Profile Image:</label>
+            <input type="file" id="image" name="image" accept="image/*">
+            </fieldset>
+            <br>
+            <fieldset id="educationFieldset">
+                <legend>Education</legend>
+                <div id="educationList">
+                    <div class="educationEntry">
+                        <label for="education">Education Details:</label>
+                        <input type="text" name="education[]" class="educationInput">
+                    </div>
+                </div>
+                <br>
+            </fieldset>
+            <fieldset id="workFieldset">
+                <legend> Work Experience </legend>
+                <div id="workList">
+                    <div class="workEntry">
+                        <label for="work">Work Experience:</label>
+                        <input type="text" name="work[]" class="workInput">
+                    </div>
+                </div>
+            </fieldset>
+            <br>
+            <fieldset>
+                <legend>Skills</legend>
+                <div id="skillsList">
+                    <div class="skillEntry">
+                        <label for="skills">Skills:</label>
+                        <input type="text" name="skills[]" class="skillsInput">
+                    </div>
+                </div>
+            </fieldset>
+            <button type="button" onclick="generateResume()">Generate Resume</button>
+            <input type="text" id="username" placeholder="Enter your username">
+
+
+        </form>
+        <div id="resumeOutput" class="resume-output">
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"></script>
+      <script src="app.js"></script>
+</body>
+</html>
